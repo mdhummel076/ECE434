@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import time
@@ -30,8 +30,11 @@ def main(screen):
 
 	board = [['.' for i in range(gameSize)] for j in range(gameSize)]
 	
-	displayBoard(gameSize, board, screen)
-
+	try:
+		displayBoard(gameSize, board, screen)
+	except:
+		print("Incompatible board size")
+		raise ValueError("Incompatible board size")
 	#Main loop
 	while(True):
 		char = screen.getch()
@@ -61,4 +64,7 @@ def main(screen):
 gameSize = int(input("What size would you like the game to be?"))
 		
 screen = curses.initscr()
-wrapper(main)
+try:
+	wrapper(main)
+except Exception as error:
+	print(repr(error))
