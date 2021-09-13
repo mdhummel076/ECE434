@@ -26,11 +26,16 @@ def main(screen):
 	global gameSize
 	global cursor
 	global board
-	global screen
 
 	curses.cbreak()
+	screen.nodelay(True)
 	screen.keypad(True)
-	
+
+	GPIO.add_event_detect(button1, GPIO.RISING, callback=updateCursor)
+	GPIO.add_event_detect(button2, GPIO.RISING, callback=updateCursor)
+	GPIO.add_event_detect(button3, GPIO.RISING, callback=updateCursor)
+	GPIO.add_event_detect(button4, GPIO.RISING, callback=updateCursor)
+
 	try:
 		displayBoard(gameSize, board, screen)
 	except:
@@ -40,10 +45,10 @@ def main(screen):
 	while(True):
 		char = screen.getch()
 		if char == 113: break
-		elif char == curses.KEY_UP: cursor[1]--
-		elif char == curses.KEY_LEFT: cursor[0]--
-		elif char == curses.KEY_RIGHT: cursor[0]++
-		elif char == curses.KEY_DOWN: cursor[1]++
+		elif char == curses.KEY_UP: cursor[1] = cursor[1] - 1
+		elif char == curses.KEY_LEFT: cursor[0] = cursor[0] - 1
+		elif char == curses.KEY_RIGHT: cursor[0] = cursor[0] + 1
+		elif char == curses.KEY_DOWN: cursor[1] = cursor[1] + 1
 		elif char == 99: board = resetBoard(gameSize, board, screen)
 		
 		if cursor[0] > gameSize - 1:
@@ -94,12 +99,19 @@ def updateCursor(channel):
 	elif channel == button3: cursor[0] = cursor[0] + 1
 	elif channel == button4: cursor[1] = cursor[1] + 1
 	
-	displayBoard(gameSize, board, screen)
+	if cursor[0] > gameSize - 1:
+		cursor[0] = gameSize - 1
+	elif cursor[0] < 0:
+		cursor[0] = 0
 	
-GPIO.add_event_detect(button1, GPIO.RISING, callback=updateCursor)
-GPIO.add_event_detect(button2, GPIO.RISING, callback=updateCursor)
-GPIO.add_event_detect(button3, GPIO.RISING, callback=updateCursor)
-GPIO.add_event_detect(button4, GPIO.RISING, callback=updateCursor)
+	if cursor[1] > gameSize - 1:
+		cursor[1] = gameSize - 1
+	elif cursor[1] < 0:
+		cursor[1] = 0
+
+	board[cursor[0]][cursor[1]] = 'x'
+	
+	displayBoard(gameSize, board, screen)
 		
 try:
 	wrapper(main)
