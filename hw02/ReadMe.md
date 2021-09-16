@@ -1,5 +1,13 @@
 This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an analysis of gpio timing on the beaglebone
 
+## Controls:
+
+Arrow Keys / 4 Gpio buttons: Move Cursor
+
+c / 5th Gpio button: Clear board
+
+q: Exit game
+
 # Measuring a gpio pin on an Oscilloscope #
 
 1. 0-250mV
