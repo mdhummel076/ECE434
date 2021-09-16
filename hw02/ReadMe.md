@@ -1,6 +1,6 @@
 This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an analysis of gpio timing on the beaglebone
 
-##Measuring a gpio pin on an Oscilloscope
+## Measuring a gpio pin on an Oscilloscope ##
 
 1. 0-250mV
 2. 240ms / 4.17 Hz
@@ -18,7 +18,7 @@ This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an 
 10. Yes again, down to 30ms
 11. 30ms is the shortest
 
-#Python
+# Python #
 
 1. 160us, 6.3kHz
 2. 100%
@@ -28,7 +28,7 @@ This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an 
 |period  | 30ms   | 160us  |
 |% CPU   | 100%   | 100%   |
 
-#C
+# C #
 
 1. 130us, 7.7kHz
 2. 100%
@@ -38,13 +38,13 @@ This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an 
 |period  | 30ms   | 160us  | 130us  |
 |% CPU   | 100%   | 100%   | 100%   |
 
-##gpiod
+## gpiod ##
 
 | Method | C      | Python |
 |:------:|:------:|:------:|
 | 1 bit  | 290kHz | 56kHz  |
 | 2 bits | 270kHz | 54kHz  |
 
-##Security
+## Security ##
 
 WIP
