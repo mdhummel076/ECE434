@@ -28,14 +28,12 @@ def main(screen):
 	global board
 
 	curses.cbreak()
-	screen.nodelay(True)
 	screen.keypad(True)
 
 	GPIO.add_event_detect(button1, GPIO.RISING, callback=updateCursor)
 	GPIO.add_event_detect(button2, GPIO.RISING, callback=updateCursor)
 	GPIO.add_event_detect(button3, GPIO.RISING, callback=updateCursor)
 	GPIO.add_event_detect(button4, GPIO.RISING, callback=updateCursor)
-	GPIO.add_event_detect(button5, GPIO.RISING, callback=updateCursor)
 
 	try:
 		displayBoard(gameSize, board, screen)
@@ -82,13 +80,11 @@ button1="P9_16"
 button2="P9_17"
 button3="P9_19"
 button4="P9_21"
-button5="P9_23"
 
 GPIO.setup(button1, GPIO.IN, GPIO.PUD_DOWN)
 GPIO.setup(button2, GPIO.IN, GPIO.PUD_DOWN)
 GPIO.setup(button3, GPIO.IN, GPIO.PUD_DOWN)
 GPIO.setup(button4, GPIO.IN, GPIO.PUD_DOWN)
-GPIO.setup(button5, GPIO.IN, GPIO.PUD_DOWN)
 
 def updateCursor(channel):
 	
@@ -101,11 +97,10 @@ def updateCursor(channel):
 	elif channel == button2: cursor[0] = cursor[0] - 1
 	elif channel == button3: cursor[0] = cursor[0] + 1
 	elif channel == button4: cursor[1] = cursor[1] + 1
-	elif channel == button5: board = resetBoard(gameSize, board, screen)
 	
 	if cursor[0] > gameSize - 1:
 		cursor[0] = gameSize - 1
-	elif cursor[0] < 0:
+elif cursor[0] < 0:
 		cursor[0] = 0
 	
 	if cursor[1] > gameSize - 1:
@@ -116,6 +111,8 @@ def updateCursor(channel):
 	board[cursor[0]][cursor[1]] = 'x'
 	
 	displayBoard(gameSize, board, screen)
+
+	print("Board should be updated")
 		
 try:
 	wrapper(main)
