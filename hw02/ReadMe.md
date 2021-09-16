@@ -47,4 +47,4 @@ This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an 
 
 # Security #
 
-WIP
+1. ssh port set to 1018
