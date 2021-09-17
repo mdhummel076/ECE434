@@ -1,5 +1,7 @@
 This is a gpio and keyboard controlled in-terminal etch-a-sketch, along with an analysis of gpio timing on the beaglebone
 
+A demo is available at https://photos.app.goo.gl/CDd328R6XuiMGZSKA
+
 ## Controls:
 
 Arrow Keys / 4 Gpio buttons: Move Cursor
