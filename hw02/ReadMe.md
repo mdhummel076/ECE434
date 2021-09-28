@@ -58,3 +58,22 @@ q: Exit game
 # Security #
 
 1. ssh port set to 1018
+
+
+# hw02 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2/2 | Buttons and LEDs 
+|  7/7 | Etch-a-Sketch works
+|      | Measuring a gpio pin on an Oscilloscope 
+|  2/2 | Questions answered
+|  4/4 | Table complete
+|  2/2 | gpiod
+|      | Security
+|  1/1 | ssh port
+|  0/1 | iptables - missing
+|  0/1 | fail2ban - missing
+| 18/20   | **Total**
+
+Nice video
