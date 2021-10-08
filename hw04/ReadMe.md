@@ -21,3 +21,18 @@ app4.py is example code used to make etch-a-sketch.py, and templates contains th
 ### LCD display ###
 
 boris.png, name.png and tada.png are each image file either used as examples or created by me using imagemagick. Each was displayed on the lcd during the in class demo.
+
+# hw04 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2/2 | Memory map 
+|  4/4 | mmap()
+|  0/4 | i2c via Kernel  | *Missing*
+|  5/5 | Etch-a-Sketch via flask
+|  5/5 | LCD display
+|      | Extras
+| 16/20 | **Total**
+
+*My comments are in italics. --may*
+
