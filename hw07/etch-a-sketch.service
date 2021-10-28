@@ -1,0 +1,10 @@
+[Unit]
+Description=etch a sketch server
+
+[Service]
+WorkingDirectory=/home/debian/ECE434/hw07
+ExecStart=/home/debian/ECE434/hw07/etch-a-sketch.py
+SyslogIdentifier=etch-a-sketch
+
+[Install]
+WantedBy=multi-user.target
