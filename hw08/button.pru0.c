@@ -16,11 +16,11 @@ void main(void) {
 
 	while(1) {
 
-		if(__R31 & pin2){
-			__R30 |= pin;
+		if(!(__R31 & pin2)){
+			__R30 |= pin1;
 		}
 		else{
-			__R30 &= ~pin;
+			__R30 &= ~pin1;
 		}
 	}
 
