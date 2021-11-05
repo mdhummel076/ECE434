@@ -5,10 +5,10 @@
 #include <math.h>
 
 #define MAXT    100 // Maximum number of time samples
-#define SAWTOOTH    // Pick which waveform
+#define SINE    // Pick which waveform
 
-volatile register uint32_t R30;
-volatile register uint32_t R31;
+volatile register uint32_t __R30;
+volatile register uint32_t __R31;
 
 void main(void)
 {
@@ -48,10 +48,10 @@ void main(void)
             onCount = waveform[i];
             offCount = 100 - onCount;
             while(onCount--) {
-                R30 |= 0x1<<0;        // Set the GPIO pin to 1
+                __R30 |= 0x1<<1;        // Set the GPIO pin to 1
             }
             while(offCount--) {
-                R30 &= ~(0x1<<0); // Clear the GPIO pin
+                __R30 &= ~(0x1<<1); // Clear the GPIO pin
             }
         }
     }

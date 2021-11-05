@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
     int i;
     for(i=0; i<MAXCH; i++) {
-        start_pwm_count(i, 1, 1);
+        start_pwm_count(i, 0, 0);
     }
 
     if(munmap(pru, PRU_LEN)) {
