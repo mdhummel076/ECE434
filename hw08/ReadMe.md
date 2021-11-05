@@ -15,8 +15,13 @@ The PRU code for this section is in pwm4.pru0.c, and the ARM code is in pwm_test
 
 ### 5.9 Reading an Input at Regular Intervals ###
 
-The file button.pru0.c turns on a GPIO LED when a button is pressed. The measured response time of this is ____.
+The file button.pru0.c turns on a GPIO LED when a button is pressed. The response time is very difficult to measure because it is so quick and the signals do not have time to settle, but it appears to be about 15ns.
 
 ### 5.10 Analog Wave Generator ###
 
-The file sin.pru0.c creates the waveform generation. Along with the low pass filter, ...
+The file sin.pru0.c creates the waveform generation. Along with the low pass filter, I was able to make several different types of waveforms. Although you can clearly see the pwm signals when you zoom in, from a surface view on the oscilloscope they generated signals look really good. I think if I had designed a better RC filter the waveforms could be much better, but I just threw something together to try it. I attached a picture of the generated sine wave
+
+Preview attachment ece343.jpg
+
+ece343.jpg
+201 KB
