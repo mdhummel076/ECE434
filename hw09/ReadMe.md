@@ -3,9 +3,13 @@
 ### Project Timeline ###
 
 11/7: get ROS installed on the Bone
+
 11/8: get ROS installed on the base station
+
 11/11: Write code to read Xbox controller, configure ROS
+
 11/12: Write code to control motors, start wiring robot
+
 11/14: Finish wiring robot, verify that everything works
 
 ### MAX31820 Temperature Sensors ###
