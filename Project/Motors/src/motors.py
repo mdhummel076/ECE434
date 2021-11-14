@@ -24,7 +24,7 @@ def callback(cmd):
 
 rospy.init_node("Motors", anonymous=True)
 
-rospy.Subscriber("armCommands", Float32MultiArray, callback)
+rospy.Subscriber("Commands", Float32MultiArray, callback)
 
 try:
 	while not rospy.is_shutdown():
