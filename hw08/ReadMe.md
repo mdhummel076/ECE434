@@ -22,3 +22,17 @@ The file button.pru0.c turns on a GPIO LED when a button is pressed. The respons
 The file sin.pru0.c creates the waveform generation. Along with the low pass filter, I was able to make several different types of waveforms. Although you can clearly see the pwm signals when you zoom in, from a surface view on the oscilloscope the generated signals look really good. I think if I had designed a better RC filter the waveforms could be much better, but I just threw something together to try it. I attached a picture of the generated sine wave
 
 https://photos.app.goo.gl/6nDGLktpJ3Rt92ZX9
+
+*Nice sine wave*
+
+# hw08 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+| 14/14 | PRU
+|  2/2 | Controlling the PWM Frequency - optional
+|  2/2 | Reading an Input at Regular Intervals - optional
+|  2/2 | Analog Wave Generator - optional
+| 20/20 | **Total**
+
+*My comments are in italics. --may*
